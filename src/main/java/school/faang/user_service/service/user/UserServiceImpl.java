@@ -19,8 +19,8 @@ import school.faang.user_service.exception.EntityNotFoundException;
 import school.faang.user_service.exception.FileOperationException;
 import school.faang.user_service.exception.user.EntitySaveException;
 import school.faang.user_service.mapper.UserMapper;
+import school.faang.user_service.publisher.AbstractEventPublisher;
 import school.faang.user_service.publisher.MessagePublisher;
-import school.faang.user_service.publisher.ProfilePicEventPublisher;
 import school.faang.user_service.repository.UserRepository;
 import school.faang.user_service.service.avatar.AvatarService;
 import school.faang.user_service.service.image.AvatarSize;
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
     private final CsvLoader csvLoader;
     private final MessagePublisher<ProfileViewEvent> profileViewEventPublisher;
     private final UserContext userContext;
-    private final ProfilePicEventPublisher profilePicEventPublisher;
+    private final AbstractEventPublisher<ProfilePicEventDto> profilePicEventPublisher;
 
     @Override
     public UserDto getUser(long userId) {

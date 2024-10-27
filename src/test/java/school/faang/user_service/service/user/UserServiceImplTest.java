@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.io.Resource;
 import org.springframework.test.util.ReflectionTestUtils;
 import school.faang.user_service.config.context.UserContext;
+import school.faang.user_service.dto.event.ProfilePicEventDto;
 import school.faang.user_service.dto.event.ProfileViewEvent;
 import school.faang.user_service.dto.user.UserDto;
 import school.faang.user_service.entity.User;
@@ -19,6 +20,7 @@ import school.faang.user_service.entity.contact.ContactPreference;
 import school.faang.user_service.entity.contact.PreferredContact;
 import school.faang.user_service.exception.EntityNotFoundException;
 import school.faang.user_service.mapper.UserMapper;
+import school.faang.user_service.publisher.AbstractEventPublisher;
 import school.faang.user_service.publisher.MessagePublisher;
 import school.faang.user_service.repository.UserRepository;
 import school.faang.user_service.service.image.AvatarSize;
@@ -75,6 +77,9 @@ public class UserServiceImplTest {
 
     @Mock
     private MessagePublisher<ProfileViewEvent> profileViewEventPublisher;
+
+    @Mock
+    private AbstractEventPublisher<ProfilePicEventDto> profilePicEventPublisher;
 
     @Mock
     private UserContext userContext;
