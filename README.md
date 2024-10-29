@@ -1,4 +1,5 @@
-В данном микросервисе разработал:
+# В данном микросервисе разработал:
+
 1) Event Service для создания/обновления/удаления Ивента и сохранения в бд: https://github.com/HoiZeG/user_service/blob/phoenix-master-stream6/src/main/java/school/faang/user_service/service/event/EventServiceImpl.java
 2) Event Controller без REST API(не предусмотрено): https://github.com/HoiZeG/user_service/blob/phoenix-master-stream6/src/main/java/school/faang/user_service/controller/event/EventController.java
 3) EventStartEventPublisher(Redis) - для отправки бизнес-нотификаций: https://github.com/HoiZeG/user_service/blob/phoenix-master-stream6/src/main/java/school/faang/user_service/publisher/EventStartEventPublisher.java
